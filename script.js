@@ -38,7 +38,6 @@ function add() {
 }
 function deletebtn(name) {
   let filterItem = studentData.filter((item) => item.name !== name);
-  // studentData.splice(index, 1);
   createTable(filterItem);
   studentData = filterItem;
 }
@@ -46,7 +45,6 @@ let selectedName;
 
 function editbtn(name) {
   let editedData = studentData.find((item) => item.name === name);
-  // console.log(editedData);
   selectedName = name;
   document.getElementById("name").value = editedData.name;
   document.getElementById("age").value = editedData.age;
