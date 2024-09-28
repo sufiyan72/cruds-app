@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      /* margin: 0 10px; */
+      padding: 0;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      text-align: center;
+      gap: 10px;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 20px auto;
+      background-image: linear-gradient(to right, #93a5cf, #e4efe9);
+    }
+    .buttonstyl button {
+      padding: 5px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 900;
+      color: white;
+      background-color: #20948b;
+    }
+    .buttonstyl {
+      margin: 5px 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .main {
+        width: 100%;
+        /* padding: 15px; */
+        /* margin: 0 10px; */
+      }
+      .buttonstyl button {
+        /* padding: 8px 15px; */
+        font-size: 14px;
+      }
+      input {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 3px 7px;
+        font-weight: 600;
+        margin: 5px;
+      }
+    }
+    .btn {
+      padding: 3px 15px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: white;
+      background-color: #598b13;
+      margin: 5px 10px;
+    }
+    .heading {
+      text-align: center;
+      text-decoration: underline;
+    }
+    .main input {
+      padding: 7px;
+      border-radius: 5px;
+      outline: none;
+    }
+    .tableData th {
+      padding: 5px;
+      background-color: #2c5f2d;
+      color: white;
+    }
+    #tbody tr td {
+      padding: 0 5px;
+    }
+    .dataHaeding {
+      margin: 0;
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <h1 class="heading">CRUDS APP</h1>
+      <input placeholder="Enter Your Name" id="name" type="text" />
+      <input placeholder="Enter Your Age" id="age" type="text" />
+      <input placeholder="Enter Your Address" id="address" type="text" />
+      <input
+        type="search "
+        placeholder="Search here..."
+        onkeyup="handleChange(this)"
+      />
+      <div class="buttonstyl">
+        <button onclick="add()" class="btn">Add</button>
+        <button onclick="update()" class="btn" disabled id="updtBtn">
+          Update
+        </button>
+      </div>
+
+      <table border="1" style="border-collapse: collapse; margin-top: 20px">
+        <thead class="tableData">
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th>Action</th>
+        </thead>
+        <h2 class="dataHaeding">Your Data</h2>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
